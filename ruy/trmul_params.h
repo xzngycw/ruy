@@ -17,6 +17,7 @@ limitations under the License.
 #define RUY_RUY_TRMUL_PARAMS_H_
 
 #include "ruy/mat.h"
+#include "ruy/path.h"
 #include "ruy/side_pair.h"
 #include "ruy/tune.h"
 
@@ -42,11 +43,6 @@ struct TrMulParams {
   // path id, can be useful info for some fine-tuning, e.g. to guess reasonable
   // cache sizes when not runtime-detectable.
   Path path;
-
-  // See MulParamsType::local_data_cache_size().
-  int local_data_cache_size = 0;
-  // See MulParamsType::shared_data_cache_size().
-  int shared_data_cache_size = 0;
 
   // Function pointers to type-erased entry points for kernels and packers.
   SidePair<RunPackFn*> run_pack;
