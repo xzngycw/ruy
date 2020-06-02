@@ -16,7 +16,9 @@ config_setting(
 
 config_setting(
     name = "x86_64",
-    values = {"cpu": "k8"},
+    constraint_values = [
+        "@bazel_tools//platforms:x86_64",
+    ],
 )
 
 config_setting(
